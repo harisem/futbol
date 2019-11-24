@@ -1,0 +1,14 @@
+{
+    "name": "Futbol",
+    "short_name": "Futbol",
+    "description": "Aplikasi PWA futbol",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#EB2C2C",
+    "theme_color": "#EB2C2C",
+    "icons": [{
+        "src": "futbol-logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}

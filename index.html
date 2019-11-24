@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>.futbol</title>
+    <meta name="description" content="My first PWA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#EB2C2C" />
+</head>
+
+<body>
+
+    <!-- Navigasi -->
+    <nav class="grey darken-4" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">.futbol</a>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">&#9776;</a>
+
+            <ul class="topnav right hide-on-med-and-down"></ul>
+            <ul id="nav-mobile" class="sidenav"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+
+    <div class="container" id="body-content"></div>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/idb.js"></script>
+    <script src="/js/db.js"></script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function () {
+                        console.log('ServiceWorker has been added.');
+                    })
+                    .catch(function () {
+                        console.log('Registering ServiceWorkers failed.');
+                    });
+            });
+        } else {
+            console.log('The browser doesnt support ServiceWorker.');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let page = window.location.hash.substr(1);
+        });
+    </script>
+</body>
+
+</html>

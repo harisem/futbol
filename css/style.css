@@ -1,0 +1,280 @@
+#transfer {
+    /*background-color: rgb(0, 0, 0);*/
+    background: url(../img/rumours.jpg) center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0 0 0;
+    /*border: 5px solid rgba(197, 197, 197, 0.877);*/
+}
+
+#transfer:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.274);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}
+
+#transfer h2 {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#gossip .row {
+    margin-bottom: 0;
+}
+
+#gossip img {
+    width: 400px;
+    padding-top: 5px;
+}
+
+/*#gossip .col {
+    padding: 5px 5px 0 0;
+}*/
+
+#gossip p .bt {
+    text-align: justify;
+    padding-right: 50px;
+    margin-bottom: 0;
+}
+
+.bt {
+    margin-bottom: 0;
+}
+
+#gossip a {
+    margin-top: 20px;
+}
+
+#gossip a .bt {
+    margin: 0;
+}
+
+#rumours .row {
+    margin-top: 0;
+}
+
+#rumours img {
+    width: 400px;
+}
+
+#rumours a {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: justify;
+}
+
+#rumours .card-content {
+    text-align: justify;
+}
+
+#standing {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/******************
+        Home
+*******************/
+
+#hot .card {
+    background-color: rgba(0, 0, 0, 0.849);
+}
+
+#hot h3 {
+    color: rgb(223, 39, 39);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#hot p a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+#hot .card-stacked h3 {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#hot .card-stacked p {
+    padding-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 2px;
+}
+
+#hot1 a span {
+    background-color: rgba(0, 0, 0, 0.849);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+#hot1 a span:hover {
+    color: rgb(255, 0, 0);
+}
+
+/******************
+Media Queries #home
+*******************/
+@media only screen and (max-width: 600px) {
+    #hot h3 {
+        font-size: 24px;
+    }
+
+    #hot p a {
+        font-size: 10px;
+    }
+
+    #hot .card-stacked h4 {
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+
+    #hot .card-stacked p {
+        padding-top: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        margin-top: -7px;
+    }
+
+    #hot1 a span {
+        font-size: 6px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    #hot p a {
+        font-size: 14px;
+    }
+
+    #hot .card-stacked h3 {
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+
+    #hot .card-stacked p {
+        padding-top: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+/******************
+        UCL
+*******************/
+
+#hot-ucl .card {
+    background-color: rgba(0, 0, 0, 0.849);
+}
+
+#hot-ucl h3 {
+    color: rgb(223, 39, 39);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#hot-ucl p a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+#hot-ucl .card-stacked h3 {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#hot-ucl .card-stacked p {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 2px;
+}
+
+#hot1 a span {
+    background-color: rgba(0, 0, 0, 0.849);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+#hot1 a span:hover {
+    color: rgb(255, 0, 0);
+}
+
+/******************
+Media Queries #home
+*******************/
+@media only screen and (max-width: 600px) {
+    #hot-ucl h3 {
+        font-size: 20px;
+    }
+
+    #hot-ucl p a {
+        font-size: 8px;
+    }
+
+    #hot-ucl .card-stacked h4 {
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+
+    #hot-ucl .card-stacked p {
+        padding-top: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        margin-top: -10px;
+    }
+
+    #hot1 a span {
+        font-size: 8px;
+    }
+
+    #transfer h2 {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    #hot-ucl h3 {
+        font-size: 28px;
+    }
+
+    #hot-ucl p a {
+        font-size: 12px;
+    }
+
+    #hot-ucl .card-stacked h3 {
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+
+    #hot-ucl .card-stacked p {
+        padding-top: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: -5px;
+    }
+}
