@@ -1,6 +1,6 @@
 let dbPromised = idb.open("futbol", 1, function (upgradeDb) {
-    let articlesObjectStore = upgradeDb.createObjectStore("articles", {
-        keyPath: "ID"
+    let articlesObjectStore = upgradeDb.createObjectStore("teams", {
+        keyPath: "id"
     });
     articlesObjectStore.createIndex("name", "name", {
         unique: false
@@ -10,8 +10,8 @@ let dbPromised = idb.open("futbol", 1, function (upgradeDb) {
 function saveForLater(article) {
     dbPromised
         .then(function (db) {
-            let tx = db.transaction("articles", "readwrite");
-            let store = tx.objectStore("articles");
+            let tx = db.transaction("teams", "readwrite");
+            let store = tx.objectStore("teams");
             console.log(article);
             store.add(article.result);
             return tx.complete;
@@ -25,8 +25,8 @@ function getAll() {
     return new Promise(function (resolve, reject) {
         dbPromised
             .then(function (db) {
-                let tx = db.transaction("articles", "readonly");
-                let store = tx.objectStore("articles");
+                let tx = db.transaction("teams", "readonly");
+                let store = tx.objectStore("teams");
                 return store.getAll();
             })
             .then(function (articles) {
@@ -38,8 +38,8 @@ function getAll() {
 function getAllByTitle(title) {
     dbPromised
         .then(function (db) {
-            let tx = db.transaction("articles", "readonly");
-            let store = tx.objectStore("articles");
+            let tx = db.transaction("teams", "readonly");
+            let store = tx.objectStore("teams");
             let titleIndex = store.index("name");
             let range = IDBKeyRange.bound(title, title + "\uffff");
             return titleIndex.getAll(range);
@@ -53,8 +53,8 @@ function getById(id) {
     return new Promise(function (resolve, reject) {
         dbPromised
             .then(function (db) {
-                let tx = db.transaction("articles", "readonly");
-                let store = tx.objectStore("articles");
+                let tx = db.transaction("teams", "readonly");
+                let store = tx.objectStore("teams");
                 return store.get(id);
             })
             .then(function (article) {

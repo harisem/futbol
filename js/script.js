@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Load page content
-    var page = window.location.hash.substr(1);
+    let page = window.location.hash.substr(1);
     if (page == '') page = 'home';
     loadPage(page);
 
     function loadPage(page) {
-        var xhttp = new XMLHttpRequest();
+        let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4) {
                 let content = document.querySelector('#body-content');
