@@ -1,4 +1,4 @@
-const CACHE_NAME = "futbol-v3";
+const CACHE_NAME = "futbol-v4";
 var urlsToCache = [
     "/",
     "/nav.html",
@@ -6,6 +6,7 @@ var urlsToCache = [
     "/article.html",
     "/pages/home.html",
     "/pages/saved.html",
+    "/css/style.css",
     "/css/materialize.css",
     "/js/materialize.min.js",
     "/manifest.json",

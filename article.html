@@ -15,10 +15,9 @@
 
 <body>
 
-    <!-- Navigasi -->
     <nav class="grey darken-4" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">.futbol</a>
+            <a id="logo-container" href="./index.html" class="brand-logo">.futbol</a>
             <a href="./index.html" data-target="nav-mobile" class="sidenav-trigger">
                 <i class="material-icons">arrow_back</i>
             </a>
@@ -27,13 +26,18 @@
             <ul id="nav-mobile" class="sidenav"></ul>
         </div>
     </nav>
-    <!-- Akhir Navigasi -->
 
     <div class="container" id="body-content"></div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red" id="save">
+        <a class="btn-floating btn-large green" id="save">
             <i class="large material-icons">save</i>
+        </a>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red" id="delete">
+            <i class="large material-icons">delete</i>
         </a>
     </div>
 
@@ -43,7 +47,6 @@
     <script src="/js/idb.js"></script>
     <script src="/js/db.js"></script>
     <script>
-        // REGISTER SERVICE WORKER
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
                 navigator.serviceWorker.register('/service-worker.js')
@@ -62,20 +65,29 @@
             let urlParams = new URLSearchParams(window.location.search);
             let isFromSaved = urlParams.get("saved");
             let save = document.getElementById("save");
+            let hapus = document.getElementById("delete");
 
             if (isFromSaved) {
                 save.style.display = 'none';
+                hapus.style.display = 'show';
                 getSavedArticleById();
+                hapus.onclick = function () {
+                    item.then(function (article) {
+                        Delete(article);
+                    });
+                };
             } else {
-                let item = getArticlesById();
+                hapus.style.display = 'none';
             }
+            let item = getArticlesById();
 
             save.onclick = function () {
-                console.log("FAB's button clicked.");
                 item.then(function (article) {
-                    saveForLater(article);
+                    Save(article);
                 });
             };
+
+
         });
     </script>
 </body>

@@ -262,15 +262,15 @@ function getSavedArticles() {
 
         let articlesHTML = "";
         articles.forEach(function (article) {
-            let description = article.teams.name.substring(0, 100);
+            let description = article.name.substring(0, 100);
             articlesHTML += `
                 <div class="col s12 m8 offset-m2 l6 offset-l3">
-                    <a href="./article.html?id=${article.teams.id}">
+                    <a href="./article.html?id=${article.id}&saved=true">
                         <div class="card-panel grey lighten-5 z-depth-1">
                             <div class="row valign-wrapper">
                                 <div class="col s3">
                                     
-                                    <img src="${article.teams.crestUrl}" alt="" class="responsive-img">
+                                    <img src="${article.crestUrl}" alt="" class="responsive-img">
                                     
                                 </div>
                                 <div class="col s7">
@@ -284,7 +284,7 @@ function getSavedArticles() {
                 </div>
             `;
         });
-        document.getElementById("body-content").innerHTML = articlesHTML;
+        document.getElementById("articles").innerHTML = articlesHTML;
     });
 }
 

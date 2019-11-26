@@ -7,18 +7,31 @@ let dbPromised = idb.open("futbol", 1, function (upgradeDb) {
     });
 });
 
-function saveForLater(article) {
+function Save(article) {
     dbPromised
         .then(function (db) {
             let tx = db.transaction("teams", "readwrite");
             let store = tx.objectStore("teams");
             console.log(article);
-            store.add(article.result);
+            store.add(article);
             return tx.complete;
         })
         .then(function () {
-            console.log("Article has been saved.");
+            console.log("Team has been saved.");
         });
+}
+
+function Delete(article) {
+    dbPromised
+        .then(function (db) {
+            let tx = db.transaction("teams", "readwrite");
+            let store = tx.objectStore("teams");
+            store.delete(article.id);
+            return tx.complete;
+        })
+        .then(function () {
+            console.log("Team has been deleted.");
+        })
 }
 
 function getAll() {
